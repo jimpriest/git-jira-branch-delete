@@ -32,7 +32,7 @@ for i in branchlist:
   ticketnum = regex.findall(pattern, branchname)
   if len(ticketnum):
     # get issue info from JIRA
-    issue = jira.issue( key + "-" + ticketnum[0])
+    issue = jira.issue( jirakey + "-" + ticketnum[0])
     status = str(issue.fields.status)
     if status in ticketstatusfordelete:
       print("Issue " + str(ticketnum[0]) + ": " + status + " (delete me)")
