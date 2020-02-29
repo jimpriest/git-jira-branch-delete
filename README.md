@@ -23,6 +23,11 @@ Jira key is whatever you have prefixing your ticket numbers: FOO-1234 - "FOO" is
 
 There is an example credentials file included in the repository. Rename to credentials.py and enter your information.
 
+Modify the status in deletebranch to whatever you use in your Jira project:
+
+ticketstatusfordelete = ["Done", "Pending Release"]
+
+
 ### Running 
 
 python branchdelete.py
