@@ -21,7 +21,7 @@ Jira URL, key, username and password are stored in credentials.py - this should 
 
 Jira key is whatever you have prefixing your ticket numbers: FOO-1234 - "FOO" is the key. 
 
-There is an example file included in the repository. Rename to credentials.py and enter your information.
+There is an example credentials file included in the repository. Rename to credentials.py and enter your information.
 
 ### Running 
 
