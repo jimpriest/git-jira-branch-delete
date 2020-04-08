@@ -17,19 +17,21 @@ This assumes you include your Jira ticket # in your branch names. We use: featur
 * I'm using pipenv  (https://pipenv-fork.readthedocs.io/en/latest/basics.html)
 
 ### Configuraton
-Jira URL, key, username and password are stored in credentials.py - this should typically not be checked into source control. 
+Jira URL, key, username and password are stored in credentials.py - this should typically NOT be checked into source control. 
 
 Jira key is whatever you have prefixing your ticket numbers: FOO-1234 - "FOO" is the key. 
 
-There is an example credentials file included in the repository. Rename to credentials.py and enter your information.
+There is an example credentials file included in the repository. Rename to credentials.py and enter your information. 
 
-Modify the status in deletebranch to whatever you use in your Jira project:
+Again make sure you do not commit credentials.py! 
+
+Modify the status in the script to whatever you use in your Jira project. For our project when it's Pending Release or Done we can delete the branch:
 
 ticketstatusfordelete = ["Done", "Pending Release"]
 
 
 ### Running 
-
+pipenv shell
 python branchdelete.py
 
 
