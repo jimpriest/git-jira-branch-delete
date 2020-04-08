@@ -22,9 +22,9 @@ git = repo.git
 # Get local Git Branches
 branchlist = repo.branches
 
-# Parse 4 digit ticket numbers and check JIRA status for that ticket
+# Parse 4 or 5 digit ticket numbers and check JIRA status for that ticket
 # Change status to whatever status you want to delete branches 
-pattern = '\\d{4}'
+pattern = '\\d{4,5}'
 ticketstatusfordelete = ["Done", "Pending Release"]
 
 for i in branchlist:
@@ -35,6 +35,7 @@ for i in branchlist:
     issue = jira.issue( jirakey + "-" + ticketnum[0])
     status = str(issue.fields.status)
     if status in ticketstatusfordelete:
-      print("Issue " + str(ticketnum[0]) + ": " + status + " (delete me)")
+      print("Issue " + str(ticketnum[0]) + " is " + status + "! Branch deleted: " + branchname)
+      git.branch('-D', branchname)    
     else:
-      print("Issue " + str(ticketnum[0]) + ": " + status)
+      print("Issue " + str(ticketnum[0]) + " is " + status + ". Nothing to do!")
