@@ -31,8 +31,17 @@ ticketstatusfordelete = ["Done", "Pending Release"]
 
 
 ### Running 
-pipenv shell
-python branchdelete.py
+* pipenv shell
+* python branchdelete.py
 
-
+```
+jpriest: ~/www/git-jira-branch-delete (master=)$ pipenv shell python branchdelete.py 
+Launching subshell in virtual environment…
+bash-3.2$  . /Users/jpriest/.local/share/virtualenvs/git-jira-branch-delete-vVt7mrDH/bin/activate
+(git-jira-branch-delete) bash-3.2$ python branchdelete.py
+Issue 341 is In Review. Nothing to do!
+Issue 123 is Done! Branch deleted: feature/FOOBAR-123-report_JP_v172
+Issue 452 is Cancelled. Nothing to do!
+Issue 345 is Pending Merge. Nothing to do!
+```
 
