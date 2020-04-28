@@ -25,7 +25,7 @@ branchlist = repo.branches
 # Parse 4 or 5 digit ticket numbers and check JIRA status for that ticket
 # Change status to whatever status you want to delete branches 
 pattern = '\\d{4,5}'
-ticketstatusfordelete = ["Done", "Pending Release"]
+ticketstatusfordelete = ["Done", "Pending Release", "Cancelled"]
 
 for i in branchlist:
   branchname = str(i)
